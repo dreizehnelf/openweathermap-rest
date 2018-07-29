@@ -8,11 +8,13 @@ UNIT_CELSIUS = "℃"
 UNIT_FAHRENHEIT = "℉"
 UNIT_KELVIN = "K"
 
+
 def make_absolute(relative_url):
     return "{base}{relative}".format(
         base=settings.BASE_URL,
         relative=relative_url
     )
+
 
 def test_weather_summary():
 

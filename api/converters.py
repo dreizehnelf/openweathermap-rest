@@ -1,5 +1,6 @@
 import datetime
 
+
 class DateConverter:
     regex = '[0-9]{8}'
     FORMAT = "%Y%m%d"
@@ -21,6 +22,7 @@ class DateConverter:
                  DateConverter.FORMAT
         """
         return value.strftime(self.FORMAT)
+
 
 class TimeConverter:
     regex = '[0-9]{4}'
