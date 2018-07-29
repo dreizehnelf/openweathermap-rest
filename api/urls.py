@@ -1,4 +1,4 @@
-"""openweathermap_rest URL Configuration
+"""api URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -13,12 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, register_converter
+
+from . import converters, views
+
+register_converter(converters.DateConverter, 'date')
+register_converter(converters.TimeConverter, 'time')
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("api-auth/", include("rest_framework.urls")),
-    path("weather/", include("api.urls"))
+    path(
+        "summary/<location>/<date:date>/<time:time>/",
+        views.summary,
+        name="weather-summary"
+    )
 
 ]

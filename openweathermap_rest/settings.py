@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'openweathermap_rest',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +120,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# used for i.e. testing
+BASE_URL = "http://127.0.0.1:8000"
