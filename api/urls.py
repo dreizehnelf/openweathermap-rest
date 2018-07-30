@@ -22,9 +22,9 @@ register_converter(converters.TimeConverter, 'time')
 
 urlpatterns = [
     path(
-        "summary/<location>/<date:date>/<time:time>/",
-        views.summary,
-        name="weather-summary"
+        "<data_type>/<location>/<date:date>/<time:time>/",
+        views.weather,
+        name="weather"
     )
 
 ]
