@@ -9,6 +9,7 @@ install:
 before_script:
   - pip install -r requirements.txt
   - python manage.py migrate
+  - create_admin.sh
   - python manage.py runserver &
 script: tox
 after_success: coveralls
