@@ -60,7 +60,7 @@ Since you will need the API key to run the REST API service, you either have to:
 1. Checkout the repository, i.e. `git clone https://github.com/dreizehnelf/openweathermap-rest.git`
 2. Change into the repositories directory, i.e. `cd openweathermap-rest`
 3. Install the requirements, i.e. `pip install -r requirements.txt`
-4. Fire up the django dev server, i.e. `python manage.py runserver
+4. Fire up the django dev server, i.e. `python manage.py runserver`
 5. (optional) Start another terminal, change into the same folder, activate the env again and launch `tox` to run the tests
 
 
