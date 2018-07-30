@@ -20,11 +20,11 @@ from . import converters, views
 register_converter(converters.DateConverter, 'date')
 register_converter(converters.TimeConverter, 'time')
 
+
 urlpatterns = [
     path(
         "<data_type>/<location>/<date:date>/<time:time>/",
         views.weather,
         name="weather"
-    )
-
+    ),
 ]
