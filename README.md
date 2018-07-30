@@ -2,6 +2,8 @@
 
 This repository contains a django REST API service that allows to query weather forecasts by using the [OpenWeatherMap.org API](https://openweathermap.org/api).
 
+[![Build Status](https://travis-ci.org/dreizehnelf/openweathermap-rest.png)](https://travis-ci.org/dreizehnelf/openweathermap-rest)
+
 ## Features
 - Uses [Python 3](https://www.python.org/)
 - Based on [django REST Framework](http://www.django-rest-framework.org/) to simplify further extension
