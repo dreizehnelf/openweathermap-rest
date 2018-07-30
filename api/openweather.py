@@ -144,6 +144,7 @@ def serialize_forecast(forecast, use_fahrenheit=False):
     temperature_value = forecast.get_temperature(unit=temperature_unit)
 
     return {
+        "status": "success",
         "timestamp": forecast.timestamp.strftime(DATETIME_FORMAT),
         "description": forecast.description,
         "temperature": {
