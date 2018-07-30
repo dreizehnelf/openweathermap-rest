@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -124,3 +125,25 @@ STATIC_URL = '/static/'
 # used for i.e. testing
 BASE_URL = "http://127.0.0.1:8000"
 TEST_RUNNER = "openweathermap_rest.pytest_runner.PytestTestRunner"
+
+# pull in local_settings.py
+try:
+    from local_settings import *  # noqa: F401,F403
+
+except ImportError:
+    pass
+
+# make sure our openweathermap.org API key is specified
+try:
+    from local_settings import OPENWEATHERMAPORG_API_KEY
+except ImportError:
+
+    # see, if we can pull it from the environment
+    if "OPENWEATHERMAPORG_API_KEY" in os.environ:
+        OPENWEATHERMAPORG_API_KEY = os.environ["OPENWEATHERMAPORG_API_KEY"]
+    else:
+        raise ImproperlyConfigured(
+            "You need to specify the openweathermap.org API key in the "
+            "OPENWEATHERMAPORG_API_KEY variable in local_settings.py or via "
+            "an environment variable of the same name."
+        )

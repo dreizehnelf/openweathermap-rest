@@ -4,10 +4,6 @@ import requests
 from django.conf import settings
 from django.urls import reverse
 
-UNIT_CELSIUS = "℃"
-UNIT_FAHRENHEIT = "℉"
-UNIT_KELVIN = "K"
-
 
 def make_absolute(relative_url):
     return "{base}{relative}".format(
@@ -19,19 +15,28 @@ def make_absolute(relative_url):
 def test_weather_summary():
 
     DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
-    LOCATION = "Horley"
+    LOCATION = "Berlin,DE"
 
     dates_to_check = {
         "2018-07-18 18:00:00": {
+            "message": "Unfortunately there's no data "
+                       "for 'berlin,de' on 2018-07-18 18:00:00",
+            "status": "error"
+        },
+        "2018-08-02 12:00:00": {
+            "timestamp": "2018-08-02 12:00:00",
             "description": "clear sky",
             "temperature": {
-                "value": 13,
-                "unit": "℃"
+                "value": 28,
+                "unit": "\u2103"
             },
-            "pressure": 1082.25,
             "humidity": {
-                "value": 58,
+                "value": 69.0,
                 "unit": "%"
+            },
+            "pressure": {
+                "value": 1028.06,
+                "unit": "hPa"
             }
         }
     }
