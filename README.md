@@ -38,7 +38,7 @@ You will need to [signup @ OpenWeatherMap.org](https://home.openweathermap.org/u
 
 ##### Run `openweathermap-rest`
 
-    `docker run -it -p 8000:8000 -e OPENWEATHERMAPORG_API_KEY='<insert-your-key-here>' dreizehnelf/openweathermap_rest:latest`
+    `docker run -it -p 8000:8000 -e OPENWEATHERMAPORG_API_KEY='<insert-your-key-here>' dreizehnelf/openweathermap-rest:latest`
 
 This will spin up the container, share the django server running in the container on port 8000 to your local port 8000 and launch the test suite via tox in the background.
 
