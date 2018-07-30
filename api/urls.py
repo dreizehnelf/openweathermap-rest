@@ -27,4 +27,9 @@ urlpatterns = [
         views.weather,
         name="weather"
     ),
+    path(
+        "protected/<data_type>/<location>/<date:date>/<time:time>/",
+        views.protected_weather,
+        name="protected-weather"
+    ),
 ]

@@ -126,3 +126,20 @@ def test_weather():
             else:
                 # otherwise we expect json data
                 assert r.json() == result
+
+            # now test the same url with the view that is using
+            # authentication and make sure it's not accessible
+
+            url = reverse(
+                "protected-weather",
+                kwargs={
+                    "data_type": data_type,
+                    "location": LOCATION.lower(),
+                    "date": dt.date(),
+                    "time": dt.time()
+                }
+            )
+
+            r = requests.get(make_absolute(url))
+
+            assert r.status_code == 403
