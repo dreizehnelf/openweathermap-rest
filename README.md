@@ -40,8 +40,8 @@ You will need to [signup @ OpenWeatherMap.org](https://home.openweathermap.org/u
 
 This will spin up the container, share the django server running in the container on port 8000 to your local port 8000 and launch the test suite via tox in the background.
 
-API documentation is available at: [http://localhost:8000/weather/docs/](http://localhost:8000/weather/docs/)
-django Admin interface is available at: [http://localhost:8000/admin/](http://localhost:8000/admin/)
+- API documentation is available at: [http://localhost:8000/weather/docs/](http://localhost:8000/weather/docs/)
+- django Admin interface is available at: [http://localhost:8000/admin/](http://localhost:8000/admin/)
 
 The default username is `admin` and the default password is `adminpass`.
 
