@@ -139,9 +139,12 @@ try:
 except ImportError:
 
     # see, if we can pull it from the environment
-    if "OPENWEATHERMAPORG_API_KEY" in os.environ:
-        OPENWEATHERMAPORG_API_KEY = os.environ["OPENWEATHERMAPORG_API_KEY"]
-    else:
+    OPENWEATHERMAPORG_API_KEY = os.getenv(
+        "OPENWEATHERMAPORG_API_KEY",
+        None
+    )
+
+    if OPENWEATHERMAPORG_API_KEY is None:
         raise ImproperlyConfigured(
             "You need to specify the openweathermap.org API key in the "
             "OPENWEATHERMAPORG_API_KEY variable in local_settings.py or via "

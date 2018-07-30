@@ -42,6 +42,26 @@ def test_weather():
             "invalid": None
         },
 
+        "2018-08-30 18:00:00": {
+            "summary": {
+                "status": "error",
+                "message": "Can not get forecasts further out than 5 days."
+            },
+            "temperature": {
+                "status": "error",
+                "message": "Can not get forecasts further out than 5 days."
+            },
+            "humidity": {
+                "status": "error",
+                "message": "Can not get forecasts further out than 5 days."
+            },
+            "pressure": {
+                "status": "error",
+                "message": "Can not get forecasts further out than 5 days."
+            },
+            "invalid": None
+        },
+
         "2018-08-02 12:00:00": {
             "summary": {
                 "status": "success",
