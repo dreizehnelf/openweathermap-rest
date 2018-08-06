@@ -42,7 +42,7 @@ def test_weather():
             "invalid": None
         },
 
-        "2018-08-30 18:00:00": {
+        "2019-08-30 18:00:00": {
             "summary": {
                 "status": "error",
                 "message": "Can not get forecasts further out than 5 days."
@@ -58,48 +58,53 @@ def test_weather():
             "pressure": {
                 "status": "error",
                 "message": "Can not get forecasts further out than 5 days."
-            },
-            "invalid": None
-        },
-
-        "2018-08-02 12:00:00": {
-            "summary": {
-                "status": "success",
-                "timestamp": "2018-08-02 12:00:00",
-                "description": "clear sky",
-                "temperature": {
-                    "value": 28,
-                    "unit": "\u2103"
-                },
-                "humidity": {
-                    "value": 69.0,
-                    "unit": "%"
-                },
-                "pressure": {
-                    "value": 1028.06,
-                    "unit": "hPa"
-                }
-            },
-            "temperature": {
-                "status": "success",
-                "timestamp": "2018-08-02 12:00:00",
-                "value": 28,
-                "unit": "\u2103"
-            },
-            "humidity": {
-                "status": "success",
-                "timestamp": "2018-08-02 12:00:00",
-                "value": 69.0,
-                "unit": "%"
-            },
-            "pressure": {
-                "status": "success",
-                "timestamp": "2018-08-02 12:00:00",
-                "value": 1028.06,
-                "unit": "hPa"
             },
             "invalid": None
         }
+
+        # REMARK: This is a sample on how explicit working of the API
+        #         could be tested - since actual forecast data changes
+        #         all the time, it very brittle and not really viable
+        #         long term - but I'll leave it here just as an example.
+
+        #     "2018-08-02 12:00:00": {
+        #         "summary": {
+        #             "status": "success",
+        #             "timestamp": "2018-08-02 12:00:00",
+        #             "description": "clear sky",
+        #             "temperature": {
+        #                 "value": 28,
+        #                 "unit": "\u2103"
+        #             },
+        #             "humidity": {
+        #                 "value": 69.0,
+        #                 "unit": "%"
+        #             },
+        #             "pressure": {
+        #                 "value": 1028.06,
+        #                 "unit": "hPa"
+        #             }
+        #         },
+        #         "temperature": {
+        #             "status": "success",
+        #             "timestamp": "2018-08-02 12:00:00",
+        #             "value": 28,
+        #             "unit": "\u2103"
+        #         },
+        #         "humidity": {
+        #             "status": "success",
+        #             "timestamp": "2018-08-02 12:00:00",
+        #             "value": 69.0,
+        #             "unit": "%"
+        #         },
+        #         "pressure": {
+        #             "status": "success",
+        #             "timestamp": "2018-08-02 12:00:00",
+        #             "value": 1028.06,
+        #             "unit": "hPa"
+        #         },
+        #         "invalid": None
+        #     }
     }
 
     for dt_string, data in dates_to_check.items():
